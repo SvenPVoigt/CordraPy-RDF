@@ -62,9 +62,21 @@ class Dataset:
 
 
     def rem(self, obj):
-        r = self.client.delete(str(obj.get_id()))
-        del self.cordraObjects[obj.properties[obj._idString]]
-        del obj
+        if isinstance(obj, CordraObject):
+            obj_id = obj.get_id()
+        else:
+            obj_id = obj
+        del self.cordraObjects[obj_id]
+
+
+    def deleteFromCordra(self, obj):
+        if isinstance(obj, CordraObject):
+            obj_id = str(obj.get_id())
+        else:
+            obj_id = obj
+
+        r = self.client.delete(obj_id)
+        del self.cordraObjects[obj_id]
         return r
 
 

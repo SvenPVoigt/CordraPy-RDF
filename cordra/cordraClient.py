@@ -72,6 +72,12 @@ class CordraClient:
             }
 
 
+    @staticmethod
+    def writeCredentialsFile(fp, username="", password=""):
+        with open(fp, "w+") as f:
+            f.write(json.dumps({"username": username, "password": password}))
+
+
     def get_auth(self, credentials_file):
         """Get a token with credentials"""
 
