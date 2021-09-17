@@ -1,3 +1,8 @@
+'''Cordra Methods are low level, exact to form implementations of the REST API functions. 
+All methods accept every single parameter that can be passed to the REST API function of 
+the same method.'''
+
+
 import requests
 import json
 

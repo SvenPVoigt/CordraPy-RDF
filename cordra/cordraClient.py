@@ -50,7 +50,7 @@ class CordraClient:
     """
 
     host: str #URL
-    handle: str
+    handle: str="prefix"
     credentials_file: str #FilePath
     params: Dict=dict()
 
