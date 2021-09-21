@@ -34,7 +34,7 @@ def check_response(response):
         try:
             return response.json()
         except BaseException:
-            return response.text
+            return response.content
 
 
 def set_auth(username, password):

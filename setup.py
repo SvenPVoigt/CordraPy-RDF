@@ -8,7 +8,7 @@ PACKAGE_NAME = "CordraPy-RDF"
 
 setup(
     name=PACKAGE_NAME,
-    version='0.4.0',
+    version='0.4.1',
     description='Python client interface to a cordra instance',
     author='Zachary Trautt, Faical Yannick Congo, Sven Voigt',
     author_email='svenpvoigt@gmail.com',

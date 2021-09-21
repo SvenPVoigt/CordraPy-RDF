@@ -11,9 +11,9 @@ import fastjsonschema
 import jsonschema
 
 
-def identifiedObjectDefault(o, idString=""):
+def identifiedObjectDefault(o):
     if isinstance(o, CordraObject):
-       return str(o.get_id())
+        return str(o.get_id())
 
 
 def containsPair(d: dict, ds: dict) -> str:
@@ -49,7 +49,7 @@ class CordraObject:
                     
         cls._validate = staticmethod(partial(jsonschema.validate, schema=cls._schema))
                 
-        cls._jsonDefault = staticmethod(partial(identifiedObjectDefault, idString=cls._idString))
+        # cls._jsonDefault = staticmethod(partial(identifiedObjectDefault, idString=cls._idString))
 
         return super().__new__(cls)
 
@@ -72,6 +72,10 @@ class CordraObject:
 
     def json(self):
         return json.dumps(self.properties, default=self._jsonDefault)
+
+
+    def as_dict(self):
+        return json.loads(self.json())
 
 
     def get_id(self):

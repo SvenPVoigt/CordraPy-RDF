@@ -15,7 +15,6 @@ from .cordraMethods import (
 )
 from .cordraObject import CordraObject
 from .cordraClient import CordraClient
-from.cordraId import CordraId
 from .dataset import Dataset
 
 def get_version():
@@ -49,6 +48,5 @@ __all__ = [
     "delete_token",
     "CordraObject",
     "CordraClient",
-    "CordraId",
     "Dataset"
 ]
